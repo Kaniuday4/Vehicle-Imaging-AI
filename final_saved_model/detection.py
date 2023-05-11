@@ -68,4 +68,5 @@ if(detections['detection_scores'][0]>0.2):
     image.show()
     image.save('out.jpg')
 
-
+else:
+    print('No License Plate Detected')
