@@ -83,3 +83,9 @@ else:
     print('No License Plate Detected')
     if os.path.exists("plate.jpg"):
         os.remove("plate.jpg")
+
+# --------------------------------------------------
+# LIMITATIONS: Input image should have correct 
+#              orientation i.e. image should not 
+#              be inverted left, right, and up.
+# --------------------------------------------------
