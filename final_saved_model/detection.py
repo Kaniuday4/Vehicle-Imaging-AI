@@ -1,3 +1,10 @@
+'''
+Authors: Prateek Kumar Singh, s3890089
+         Kanimozhi Udayakumar, s3913700
+
+Org: RMIT University
+'''
+
 #Loading the saved_model
 import tensorflow as tf
 import time
@@ -9,6 +16,7 @@ warnings.filterwarnings('ignore')
 from PIL import Image
 import matplotlib.pyplot as plt
 import argparse
+import os
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-i","--image",required=True,help="image path")
@@ -53,6 +61,8 @@ if(detections['detection_scores'][0]>0.2):
                                   detections['detection_boxes'][0][0] * im_height, detections['detection_boxes'][0][2] * im_height)
     
     im1 = image.crop((left, top, right, bottom))
+    rgb_im = im1.convert('RGB')
+    rgb_im.save('plate.jpg')
 
     # overlay
     logo_path ='logo.png'
@@ -66,7 +76,10 @@ if(detections['detection_scores'][0]>0.2):
 
     # Displaying the image
     image.show()
-    image.save('out.jpg')
+    rgb_im2 = image.convert('RGB')
+    rgb_im2.save('out.jpg')
 
-else:
+else: 
     print('No License Plate Detected')
+    if os.path.exists("plate.jpg"):
+        os.remove("plate.jpg")
