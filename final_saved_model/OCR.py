@@ -83,7 +83,12 @@ response = client.text_detection(image=image)
 
 texts=response.text_annotations
 
-txt = texts[0].description
+try:
+    txt = texts[0].description
+except:
+    print("Text Detection Unsuccessful!")
+    exit()
+         
 tokens = txt.split('\n')
 tokens = [x.replace(" ", "") for x in tokens] # Removing all whitespaces b/w the detected text.
 discard = []
