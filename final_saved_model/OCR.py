@@ -76,7 +76,7 @@ cv2.waitKey(0)
 ### Google Vision
 
 client = vision.ImageAnnotatorClient()
-success, encoded_image = cv2.imencode('.jpg', Plate)
+success, encoded_image = cv2.imencode('.jpg', corrected_img)
 image = encoded_image.tobytes()
 image = vision.types.Image(content=image)
 response = client.text_detection(image=image)
