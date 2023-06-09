@@ -1,0 +1,52 @@
+Release Notes
+---------------------
+Final version released on 16/05/23 - OCR code added
+Release on 11/05/23 - Test case when no number plate detected
+Release on 10/05/23 - updated readme.txt
+Release on 05/05/23 - Model masking code added
+Release on 03/05/23 - detection.py updated
+Release on 18/04/23 - Pretrained model source code
+
+
+Installation
+---------------------
+The following modules will have to be installed in python3 before running the source code:
+
+1. Tensorflow 2
+2. Numpy
+3. Cv2
+4. Pillow
+5. matplotlib
+6. pandas
+7. df2img
+8. Google-cloud-vision
+
+
+Running Instructions
+---------------------
+1. All requirements will have to be installed before running the source code.
+2. After successfully installing the requirements, google cloud credentials are required to run the OCR module.
+3. Line 20 in OCR.py, change the json file to own google-cloud credentials file path.
+
+Command to execute detection, masking and character recognition code - 
+
+$ python3 detection.py -i inputs/<input_image> -m saved_model/saved_model ;python3 OCR.py
+
+-i takes the input image parameter
+-m takes the saved model .pb file which is the trained model file
+
+
+Github URL
+---------------------
+Github link - https://github.com/Kaniuday4/Vehicle-Imaging-AI/ 
+Github link for pertained model - https://github.com/Kaniuday4/Vehicle-Imaging-AI/tree/main/ssd-plate_detection-pretrained
+Github link for final detection source code - https://github.com/Kaniuday4/Vehicle-Imaging-AI/tree/main/final_saved_model
+
+
+Training code URL
+---------------------
+Below is the share point link to training code along with the training dataset. Since the size of zip file is more than 1GB, it cannot be pushed to github. 
+
+https://rmiteduau-my.sharepoint.com/:u:/r/personal/s3913700_student_rmit_edu_au/Documents/models.zip?csf=1&web=1&e=hPS6JG 
+
+
